@@ -1,24 +1,24 @@
-import PostgreSQLProvider
+//import PostgreSQLProvider
 
 final class User: Model {
     let userName: String
     let email: String
     let password: String
-    
+
     let storage = Storage()
-    
+
     init(userName: String, email: String, password: String) {
         self.userName = userName
         self.email = email
         self.password = password
     }
-    
+
     init(row: Row) throws {
         self.userName = try row.get("username")
         self.email = try row.get("email")
         self.password = try row.get("password")
     }
-    
+
 }
 
 extension User: RowRepresentable {
@@ -40,7 +40,7 @@ extension User: Preparation {
             user.string("password")
         })
     }
-    
+
     static func revert(_ database: Database) throws {
         try database.delete(self)
     }

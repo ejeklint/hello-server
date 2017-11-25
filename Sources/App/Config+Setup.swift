@@ -14,7 +14,7 @@ extension Config {
     /// Configure providers
     private func setupProviders() throws {
         try addProvider(FluentProvider.Provider.self)
-        try addProvider(PostgreSQLProvider.Provider.self)
+//        try addProvider(PostgreSQLProvider.Provider.self)
     }
 
     /// Add all models that should have their
