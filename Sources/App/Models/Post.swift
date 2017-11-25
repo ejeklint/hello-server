@@ -1,5 +1,5 @@
 import Vapor
-import FluentProvider
+import MySQLProvider
 import HTTP
 
 final class Post: Model {
